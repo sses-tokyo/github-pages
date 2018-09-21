@@ -1,1 +1,40 @@
-It works.
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>イメージマップ</title>
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link href="assets/bootstrap/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.rwdImageMaps.min.js"></script>
+<script src="assets/js/function.js"></script>
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">イメージマップ</a>
+</nav>
+
+<div class="container" id="content">
+
+    <div class="section">
+        <p>体の部位をタップしてください。</p>
+        <img src="assets/images/figure_tousenbo.png" usemap="#ImageMap" id="image_map" alt="" />
+        <map name="ImageMap">
+          <area shape="rect" coords="255,2,477,81" href="#" alt="頭部" />
+          <area shape="rect" coords="257,84,479,132" href="#" alt="眼" />
+          <area shape="rect" coords="260,168,473,239" href="#" alt="首・頸部"  />
+          <area shape="rect" coords="261,247,470,365" href="#" alt="胸部" />
+          <area shape="rect" coords="264,425,471,553" href="#" alt="腹部" />
+          <area shape="rect" coords="15,193,126,304" href="#" alt="手足" />
+          <area shape="rect" coords="131,209,258,308" href="#" alt="腕" />
+          <area shape="rect" coords="244,561,492,726" href="#" alt="脚" />
+        </map>
+    </div>
+
+</div>
+
+</body>
+</html>
