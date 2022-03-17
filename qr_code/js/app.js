@@ -101,12 +101,21 @@ SQR.modal = (() => {
     const exampleInputEmail1 = document.querySelector('#exampleInputEmail1')
 
     /**
+     * 取得した文字列を入れ込んでモーダルを開く
+     */
+    const open = (url) => {
+        result.value = url
+        modal.classList.add('is-show')
+    }
+
+    /**
      * モーダルを閉じてQR読み込みを再開
      */
     const close = () => {
         modal.classList.remove('is-show')
         SQR.reader.findQR()
     }
+
 
     modalClose.addEventListener('click', () => close())
 
@@ -118,6 +127,7 @@ SQR.modal = (() => {
     })
 
     return {
+        open,
     }
 })()
 
