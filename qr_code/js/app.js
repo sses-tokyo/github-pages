@@ -129,7 +129,9 @@ SQR.modal = (() => {
     modalClose.addEventListener('click', () => close())
 
     inputBtn.addEventListener('click', () => {
-        exampleInputEmail1.value = document.getSelection()
+        var text = document.getSelection()
+        alert(text)
+        exampleInputEmail1.value = text
         close()
     })
 
