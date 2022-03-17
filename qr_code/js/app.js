@@ -130,6 +130,7 @@ SQR.modal = (() => {
 
     inputBtn.addEventListener('click', () => {
         exampleInputEmail1.value = document.getSelection()
+        close()
     })
 
     return {
