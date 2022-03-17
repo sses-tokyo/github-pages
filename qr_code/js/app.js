@@ -94,22 +94,11 @@ SQR.reader = (() => {
 
 SQR.modal = (() => {
     const result = document.querySelector('#js-result')
-    const link = document.querySelector('#js-link')
-    const copyBtn = document.querySelector('#js-copy')
     const modal = document.querySelector('#js-modal')
     const modalClose = document.querySelector('#js-modal-close')
 
     const inputBtn = document.querySelector('#js-input')
     const exampleInputEmail1 = document.querySelector('#exampleInputEmail1')
-
-    /**
-     * 取得した文字列を入れ込んでモーダルを開く
-     */
-    const open = (url) => {
-        result.value = url
-        link.setAttribute('href', url)
-        modal.classList.add('is-show')
-    }
 
     /**
      * モーダルを閉じてQR読み込みを再開
@@ -118,13 +107,6 @@ SQR.modal = (() => {
         modal.classList.remove('is-show')
         SQR.reader.findQR()
     }
-
-    const copyResultText = () => {
-        result.select()
-        document.execCommand('copy')
-    }
-
-    copyBtn.addEventListener('click', copyResultText)
 
     modalClose.addEventListener('click', () => close())
 
@@ -136,7 +118,6 @@ SQR.modal = (() => {
     })
 
     return {
-        open,
     }
 })()
 
