@@ -99,6 +99,9 @@ SQR.modal = (() => {
     const modal = document.querySelector('#js-modal')
     const modalClose = document.querySelector('#js-modal-close')
 
+    const inputBtn = document.querySelector('#js-input')
+    const exampleInputEmail1 = document.querySelector('#exampleInputEmail1')
+
     /**
      * 取得した文字列を入れ込んでモーダルを開く
      */
@@ -124,6 +127,10 @@ SQR.modal = (() => {
     copyBtn.addEventListener('click', copyResultText)
 
     modalClose.addEventListener('click', () => close())
+
+    inputBtn.addEventListener('click', () => {
+        exampleInputEmail1.value = document.getSelection()
+    })
 
     return {
         open,

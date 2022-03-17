@@ -51,6 +51,7 @@
                         class="modal-result"
                         value=""
                         readonly
+                        rows="5"
                     /></textarea>
                 </div>
                 <a href="" id="js-link" class="modal-btn" target="_blank">
@@ -59,12 +60,21 @@
                 <button id="js-copy" class="modal-btn" target="_blank">
                     コピー
                 </button>
+                <button id="js-input" class="modal-btn" target="_blank">
+                    貼り付け
+                </button>
                 <button type="button" id="js-modal-close" class="modal-btn">
                     閉じる
                 </button>
             </div>
         </div>
-
+        <br>
+        <br>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
         <div id="js-unsupported" class="unsupported">
             <p class="unsupported-title">Sorry!</p>
             <p>Unsupported browser</p>
