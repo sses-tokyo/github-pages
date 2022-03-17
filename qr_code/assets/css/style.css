@@ -1,0 +1,21 @@
+#content {
+  padding-top: 62px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+
+.reader {
+  width: 462x;
+  height: 462px;
+  position: relative;
+}
+
+.reader-video {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}

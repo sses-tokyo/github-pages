@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>QRコードリーダー</title>
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link href="assets/bootstrap/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">QRコードリーダー</a>
+</nav>
+
+<div class="container" id="content">
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">入力フォーム</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter">
+    </div>
+
+    <button type="button" class="btn btn-primary" id="js-qr">QRコードリーダー</button>
+  </form>
+
+</div>
+
+<div id="exampleModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="reader">
+          <video id="js-video" class="reader-video" autoplay playsinline></video>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="js-modal" class="modal-overlay">
+  <div class="modal">
+      <div class="modal-cnt">
+          <span class="modal-title">読み取り結果</span>
+          <textarea
+              id="js-result"
+              class="modal-result"
+              value=""
+              readonly
+          /></textarea>
+      </div>
+      <a href="" id="js-link" class="modal-btn" target="_blank">
+          開く
+      </a>
+      <button id="js-copy" class="modal-btn" target="_blank">
+          コピー
+      </button>
+      <button type="button" id="js-modal-close" class="modal-btn">
+          閉じる
+      </button>
+  </div>
+</div>
+
+<div id="js-unsupported" class="unsupported">
+  <p class="unsupported-title">Sorry!</p>
+  <p>Unsupported browser</p>
+</div>
+
+
+<div style="display:none">
+  <canvas id="js-canvas"></canvas>
+</div>
+
+<script src="assets/js/jsQR.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+$(function() {
+  $('#js-qr').on('click', function() {
+    const code = jsQR(imageData, width, height, options);
+
+    if (code) {
+      console.log("Found QR code", code);
+    }
+    $('#exampleModal').modal('show');
+  })
+});
+</script>
+
+</body>
+</html>
